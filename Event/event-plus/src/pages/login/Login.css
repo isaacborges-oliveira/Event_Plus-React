@@ -1,0 +1,87 @@
+.mae_do_login {
+    display: flex;
+    height: 100vh;
+}
+
+.banner_esquerdo {
+    flex: 1;
+
+    background-color: #b51d44;
+    /*modificar algumas caracteristicas da imagem */
+    background-image: url(../../assets/img/undraw_login_re_4vu2\ 1.png);
+    background-position: center;
+    
+    background-repeat: no-repeat;
+    clip-path: polygon(0 0, 100% 0, 40% 400%, 0% 400%);
+}
+
+
+
+
+.section_login {
+    flex: 1;
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.section_login img {
+    width: 330px;
+}
+
+.form_login {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    width: 70%;
+
+    justify-content: space-around;
+}
+
+.campos_login {
+    height: 700px;
+    width: 100%;
+}
+
+
+.campo_imput {
+
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 17%;
+}
+
+
+.campo_imput input {
+
+    width: 300px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid black;
+
+    outline: none;
+}
+a{
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: #A6A0A0;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+
+    /*0px -> 768px*/
+    .banner_esquerdo  {
+        display: none;
+    }
+    
+}

@@ -67,3 +67,38 @@
 
   }
   
+  
+@media screen and (max-width: 768px){
+
+    .container_Event thead{
+        display: none;
+    }
+
+
+    .linha_Evento td{
+        display: grid;
+        text-align: left;
+        padding: 10px 10px 10px 0;
+        grid-template-columns: 10ch auto;
+
+    }
+
+
+    .linha_Evento td::before{
+        content: attr(data-cell) ":";
+        font-weight: 700;
+        width: 80px;
+        text-align: left;
+    }
+
+    .linha_Evento td:last-child{
+        margin-bottom: 24px;
+    }
+
+    .linha_Evento td:first-child{
+        margin-top: 24px;
+    }
+
+
+}
+

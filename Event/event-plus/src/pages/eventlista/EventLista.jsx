@@ -4,6 +4,7 @@ import Comentario from "../../assets/img/comentario.png";
 import SelectOn from "../../assets/img/select on.png";
 import SelectOFF from "../../assets/img/Select.png";
 import "./EventLista.css";
+import Toggle from "../../components/toggle/Toggle";
 
 const EventLista = () => {
     return (
@@ -41,13 +42,37 @@ const EventLista = () => {
                                 <td>Nome Evento</td>
                                 <td>Tipo Evento</td>
                                 <td><img src={Comentario} alt="comentário" className="icon_Event" /></td>
-                                <td><img src={SelectOFF} alt="select off" className="icon_Event" /></td>
+                                <td><Toggle/></td>
                             </tr>
                             <tr className="linha_Evento espaço">
                                 <td>Nome Evento</td>
                                 <td>Tipo Evento</td>
                                 <td><img src={Comentario} alt="comentário" className="icon_Event" /></td>
-                                <td><img src={SelectOn} alt="select on" className="icon_Event" /></td>
+                                <td> <Toggle/></td>
+                            </tr>
+                            <tr className="linha_Evento espaço">
+                                <td>Nome Evento</td>
+                                <td>Tipo Evento</td>
+                                <td><img src={Comentario} alt="comentário" className="icon_Event" /></td>
+                                <td> <Toggle/></td>
+                            </tr>
+                            <tr className="linha_Evento espaço">
+                                <td>Nome Evento</td>
+                                <td>Tipo Evento</td>
+                                <td><img src={Comentario} alt="comentário" className="icon_Event" /></td>
+                                <td> <Toggle/></td>
+                            </tr>
+                            <tr className="linha_Evento espaço">
+                                <td>Nome Evento</td>
+                                <td>Tipo Evento</td>
+                                <td><img src={Comentario} alt="comentário" className="icon_Event" /></td>
+                                <td> <Toggle/></td>
+                            </tr>
+                            <tr className="linha_Evento espaço">
+                                <td>Nome Evento</td>
+                                <td>Tipo Evento</td>
+                                <td><img src={Comentario} alt="comentário" className="icon_Event" /></td>
+                                <td> <Toggle/></td>
                             </tr>
                         </tbody>
                     </table>

@@ -24,7 +24,9 @@ header {
 }
 
 .Adiminimage {
-
+   height: 26px;
+    width: 29px;
+   
  
     margin-top: 20px;
 }
@@ -35,18 +37,14 @@ header {
 
 
 }
+.admin{
+display: flex;
+justify-content: space-between;
+width: 300px;
+align-content: center;
 
-.Adiminimage {
-    height: 26px;
-    width: 29px;
-    margin-bottom: 50px;
-    margin-left: 10px;
-
-}
-
-.admin {
-    color: #000000;
-   margin-right: 200px;
+    background-color: aqua;
+  /* margin-left: auto; */
 }
 
 .link_header {

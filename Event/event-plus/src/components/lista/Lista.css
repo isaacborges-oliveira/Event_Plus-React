@@ -1,0 +1,101 @@
+.listagem {
+    background-color: #b51d44;
+    min-height: calc(100vh - (75px + 252px + 40px));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 0;
+}
+
+.listagem h1 {
+    color: white;
+    font-size: 17px; 
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.linha_titulo {
+    width: 250px; 
+    border: 2px solid #ffffff80;
+    margin: 10px auto 30px auto;
+    margin-bottom: 51px;
+}
+
+.tabela {
+    width: 90%;
+    max-width: 1000px; 
+}
+.coluna-esquerda {
+    text-align: left;
+    padding-left: 15px;
+}
+
+.tabela table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabela_cabecalho th {
+    color: white;
+    
+    font-size: 18px; 
+    padding: 20px 0; 
+    border-bottom: 2px solid #ffffff60;
+    
+}
+
+.item_lista {
+    text-align: center;
+    border-bottom: 1px solid #ffffff30;
+}
+
+.item_lista td {
+    color: white;
+    padding: 20px 0; 
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+.icon-button {
+    height: 28px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    .tabela thead {
+        display: none;
+
+    }
+
+    .item_lista td {
+        display: grid;
+        text-align: left;
+        padding: 10px 10px 20px 0;
+        grid-template-columns: 10ch auto;
+    }
+
+    .item_lista td::before {
+        /* Adicona o data-cell do html e coloca os depois */
+        content: attr(data-cell) ":";
+
+        font-weight: 700;
+        width: 80px;
+        text-align: left;
+    }
+    .item_lista td:last-child {
+        margin-bottom: 24px;
+    }
+    .item_lista td:first-child {
+        margin-bottom: 24px;
+    }
+}

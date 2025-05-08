@@ -1,4 +1,4 @@
-header{
+header {
     background-color: #ffffff;
     height: 75px;
 
@@ -6,14 +6,16 @@ header{
     box-shadow: 1px 4px 4px 0px #00000045;
     position: relative;
 }
-.nav_header{
+
+.nav_header {
     margin-top: 30px;
+    margin-left: 220px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.cabecalho{
+.cabecalho {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -21,35 +23,50 @@ header{
     width: 100%;
 }
 
-.cabecalho img{
-   
-    
+.Adiminimage {
+
+ 
     margin-top: 20px;
 }
-.Adiminimage{
+
+.Event_img {
+    width: 150px;
+    margin-top: 30px;
+
+
+}
+
+.Adiminimage {
     height: 26px;
     width: 29px;
     margin-bottom: 50px;
-    margin-left: 20px;
-    
+    margin-left: 10px;
+
 }
 
-.admin{
-margin-top: 30px;
+.admin {
+    color: #000000;
+   margin-right: 200px;
 }
-.link_header{
+
+.link_header {
     margin-left: 45px;
 
     color: #000000;
     text-decoration: none;
 }
 
-@media screen and (max-width: 768px){
-    .cabecalho img{
+
+
+@media screen and (max-width: 768px) {
+    .cabecalho img {
         height: 35px;
     }
 
-    .link_header{
+    .link_header {
         margin-left: 10px;
+    }
+    .nav_header{
+        display: none;
     }
 }

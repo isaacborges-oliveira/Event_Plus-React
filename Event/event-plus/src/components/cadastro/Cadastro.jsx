@@ -17,15 +17,31 @@ const Cadastro = (props) => {
 
             <form action="" className="layout_grid form_cadastro">
                 
-            <img src={promps.img_banner} />
+           <div className="img_sagui">
+           <img className="img_banner" src={props.img_banner} />
+            </div> 
                 <div className="campos_cadastro">
                     <div className="campo_cad_nome">
               
                         <input type="text" placeholder= "Titulo" />
 
                     </div>
+                    <div className="botao_sagui">
+                    <div className="campos_cad_genero" style={{display:props.visibilidade}}>
+                           
+                            <select name="" id="">
+                                <option  value="" disabled selected>Genero</option>
+                                <option value="">Ação</option>
+                                <option value="">Aventura</option>
+                                <option value="">Drama</option>
+                                <option value="">Comédia</option>
+                                
 
-                    <Botao nomeDoBotao={props.nomeDoBotao} />
+                            </select>
+
+                        </div>
+                    <Botao  nomeDoBotao={props.nomeDoBotao} />
+                    </div>
                 </div>
             </form>
         </section>

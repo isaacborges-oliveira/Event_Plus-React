@@ -1,0 +1,69 @@
+.container_Event {
+    min-height: calc(100vh - (75px + 252px + 40px));
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px;
+    text-align: center;
+    font-family: sans-serif;
+  }
+  
+  .titulo_Event {
+    font-size: 19px;
+    margin-bottom: 5px;
+  }
+  
+ 
+  .Linha_Evnet {
+    width: 300px;
+    height: 2px;
+    background-color: #B51D44;
+    margin: 0 auto 20px auto;
+  }
+  .filtro_Event {
+    text-align: left;
+    margin-bottom: 46px;
+  }
+  
+  .filtro_Event select {
+    padding: 8px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid #1f1f41;
+    margin-bottom: 30px;
+    outline: none;
+    
+  }
+  .separa td {
+    padding: 50px 20px 10px 10px ;
+  }
+.espaço td {
+    padding: 20px 20px 10px 10px;
+}
+  .tabela_Event table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .cabecalho_Event th {
+    text-align: left;
+        padding: 10px;
+        border-bottom: 2px solid #c32b55;
+    color: #000;
+    
+  }
+  
+  .linha_Evento  {
+    
+   
+    border-bottom: 1px solid #1f1f41;
+    text-align: left;
+    
+  }
+ 
+  
+  .icon_Event {     
+    width: 32px;
+    height: 24px;
+
+  }
+  

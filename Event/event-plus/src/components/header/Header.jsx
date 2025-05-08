@@ -8,17 +8,19 @@ const Header = () => {
             <div className="layout_grid cabecalho">
                 {/*Estou a redeirecionar ao clickar na logo */}
             <Link to="/">
-            <img src={Logo1} alt="Logo do Filmoteca" />
+           
+            <img className = "Event_img" src={Logo1} alt="Logo do event" />
+
             </Link>
             <nav className="nav_header">
               <Link to="/Home" className="link_header" href="">Home</Link>
-              <Link to="/Eventos" className="link_header" href="">Eventos</Link>
-              <Link to="/Usuarios" className="link_header" href="">Usuários</Link>
+              <Link to="/tipoevento" className="link_header" href="">Eventos</Link>
+              <Link to="/Usuario" className="link_header" href="">Usuários</Link>
               <Link to="/Contatos" className="link_header" href="">Contatos</Link>
             </nav>
             
             <nav className="nav_header admin">
-              <Link to="/Administrador" className="link_header" href="">Administrador</Link>
+              <Link to="/Administrador" className="_adm" href="">Administrador</Link>
               <img src={Admin} alt="" className="Adiminimage"/>
             </nav>
 

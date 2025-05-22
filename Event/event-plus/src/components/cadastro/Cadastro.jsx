@@ -6,6 +6,7 @@ const Cadastro = (props) => {
 
     return (
         <section className="section_cadastro">
+           
               <div className="Titulo_cadastro">
 
                <h1>
@@ -15,7 +16,7 @@ const Cadastro = (props) => {
 
               </div>
 
-            <form action="" className="layout_grid form_cadastro">
+            <form onSubmit={props.funcCadastro} className="layout_grid form_cadastro">
                 
            <div className="img_sagui">
            <img className="img_banner" src={props.img_banner} />
@@ -23,7 +24,13 @@ const Cadastro = (props) => {
                 <div className="campos_cadastro">
                     <div className="campo_cad_nome">
               
-                        <input type="text" placeholder= "Titulo" />
+                        <input 
+                        type="text" 
+                        placeholder= {props.campo_placeholder}
+                        value={props.valorInput}
+                        onChange={(e) => props.setValorInput(e.target.value)}
+                        
+                        />
 
                     </div>
                     <div className="botao_sagui">

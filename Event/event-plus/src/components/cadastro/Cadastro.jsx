@@ -1,58 +1,74 @@
-import "./Cadastro.css";
+import "./Cadastro.css"
 import Botao from "../botao/Botao"
-import img1 from "../../assets/img/Cadastroo.png"
+
 const Cadastro = (props) => {
-
-
     return (
-        <section className="section_cadastro">
-           
-              <div className="Titulo_cadastro">
-
-               <h1>
-                    {props.tituloCadastro}
-                </h1>
+        <main className="main_cadastro">
+            <div className="titulo">
+                <h1>{props.titulo}</h1>
                 <hr />
+            </div>
 
-              </div>
+            <section className="section_cadastro">
+                <div className="banner_cadastro">
+                    <img src={props.imagem} alt="Fundo banner do cadastro eventos" />
+                </div>
 
-            <form onSubmit={props.funcCadastro} className="layout_grid form_cadastro">
-                
-           <div className="img_sagui">
-           <img className="img_banner" src={props.img_banner} />
-            </div> 
-                <div className="campos_cadastro">
-                    <div className="campo_cad_nome">
-              
-                        <input 
-                        type="text" 
-                        placeholder= {props.campo_placeholder}
-                        value={props.valorInput}
-                        onChange={(e) => props.setValorInput(e.target.value)}
-                        
-                        />
+                <form onSubmit={props.funcCadastro} className="layout_grid form_cadastro">
 
-                    </div>
-                    <div className="botao_sagui">
-                    <div className="campos_cad_genero" style={{display:props.visibilidade}}>
-                           
-                            <select name="" id="">
-                                <option  value="" disabled selected>Genero</option>
-                                <option value="">Ação</option>
-                                <option value="">Aventura</option>
-                                <option value="">Drama</option>
-                                <option value="">Comédia</option>
-                                
+                    <div className="campos_cadastro">
+                        <div className="campo_cad_titulo">
+                            <label htmlFor="Nome"></label>
+                            <input type="text"
+                                name="nome"
+                                placeholder={props.place}
+                                value={props.valorInput}
+                                onChange={(e) => props.setValorInput(e.target.value)}
+                            />
 
+                        </div>
+                        <div className="campo_cad_titulo">
+                            <input type="date"
+                                value={props.valorDate}
+                                onChange={(e) => props.setValorDate(e.target.value)}
+                            />
+                        </div>
+                        <div className="campo_cad_titulo opcao" style={{ display: props.visibilidade }}>
+                            <label htmlFor="Nome"></label>
+                            <select name="Tipo De Evento" id="" className="select_cad"
+                                value={props.valorSelect}
+                                onChange={(e) => props.setValorSelect(e.target.value)}
+                            >
+
+                                <option value="" disabled selected>Tipo de Evento</option>
+                                {props.lista && props.lista.length > 0 && props.lista.map((itemTipoEvento) => (
+                                    (
+                                        <option value={itemTipoEvento.idTipoEvento}>{itemTipoEvento.tituloTipoEvento}</option>
+
+                                    ))
+                                )}
                             </select>
 
                         </div>
-                    <Botao  nomeDoBotao={props.nomeDoBotao} />
-                    </div>
-                </div>
-            </form>
-        </section>
+                        <div className="campo_cad_titulo">
+                            <select name="" id=""
+                                value={props.valorSelect2}
+                                onChange={(e) => props.setValorSelect2(e.target.value)}
+                            >
+                                <option selected value="">Senai</option>
+                            </select>
+                            <textarea name="" id="" placeholder="Descrição" className="descricao"
+                                value={props.valorText}
+                                onChange={(e) => props.setValorText(e.target.value)}
+                            ></textarea>
+                        </div>
 
+                        <Botao  nomeDoBotao="Cadastrar" />
+                    </div>
+                </form>
+            </section>
+        </main>
     )
 }
+
 export default Cadastro;

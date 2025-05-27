@@ -7,6 +7,7 @@ import Lista from "../../components/lista/Lista";
 import api from "../../Services/services";
 import Swal from 'sweetalert2';
 
+
 const TipoEvento = () => {
 
     const [evento, setEvento] = useState("");
@@ -36,8 +37,7 @@ const TipoEvento = () => {
         if (evento.trim() != "") {
 
             try {
-                await api.post("TiposEventos", { TituloTipoEvento: evento });
-
+                await api.post("TiposEventos", { tituloTipoEvento: evento });
 
                 alertar("success", "Cadastro realizado com sucesso")
 
@@ -125,9 +125,9 @@ const TipoEvento = () => {
             <Header />
             <main>
 
-                <Cadastro tituloCadastro="Cadastro Tipo Evento "
+                <Cadastro titulo="Cadastro Tipo Evento "
                     campoPlaceholder="Gênero"
-                    img_banner={Img1}
+                   imagem={Img1}  
                     visibilidade="none"
                     nomeDoBotao="Cadastrar"
                     funcCadastro={cadastrarEvento}
@@ -141,9 +141,12 @@ const TipoEvento = () => {
                     funcDeletar={deletarEvento}
                     funcEditar= {editarTipoEvento}
                     tipoLista="tipoEvento"
+                      visibilidade="none"
                 />
 
             </main>
+            
+
             <Footer />
         </>
 

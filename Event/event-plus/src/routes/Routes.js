@@ -5,6 +5,7 @@ import Usuario from "../pages/usuario/Usuario";
 import CadastroEvento from "../pages/cadastroevento/Cadastro";
 import EventLista from "../pages/eventlista/EventLista";
 import TelaHome from "../pages/home/Home"
+import Eventos from "../pages/eventos/Eventos"
 const Rotas = () => {
     return (
 
@@ -14,10 +15,12 @@ const Rotas = () => {
                 <Route path="/" element={<Login />} exact />
                 
                 <Route path="/tipoevento" element={<TipoEvento />} exact />
-                <Route path="/Usuario" element={<Usuario />} exact />
-                <Route path="/CadastroEvento" element={<CadastroEvento />} exact />
+                <Route path="/usuario" element={<Usuario />} exact />
+                <Route path="/cadastroEvento" element={<CadastroEvento />} exact />
                 <Route path="/eventlista" element={< EventLista />} exact />
-                <Route path="/Home" element={< TelaHome/>} exact />
+                <Route path="/tipoevento" element={< TipoEvento />} exact />
+                <Route path="/home" element={< TelaHome/>} exact />
+                <Route path="/eventos" element={< Eventos/>} exact />
 
 
             </Routes>

@@ -14,9 +14,9 @@ const Header = () => {
         </Link>
         <nav className="nav_header">
           <Link to="/Home" className="link_header" href="">Home</Link>
-          <Link to="/tipoevento" className="link_header" href="">Eventos</Link>
+          <Link to="/evento" className="link_header" href="">eventos</Link>
           <Link to="/Usuario" className="link_header" href="">Usuários</Link>
-          <Link to="/Contatos" className="link_header" href="">Contatos</Link>
+          <Link to="/eventlista" className="link_header" href="">listagem</Link>
         </nav>
 
         <nav className="nav_header admin">

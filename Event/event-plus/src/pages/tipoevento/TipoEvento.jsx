@@ -138,7 +138,7 @@ const TipoEvento = () => {
                     tituloLista="do Tipo Evento "
                     titulo="Titulo"
                     lista={listaEvento}
-                    funcDeletar={deletarEvento}
+                    excluir={deletarEvento}
                     funcEditar= {editarTipoEvento}
                     tipoLista="tipoEvento"
                       visibilidade="none"

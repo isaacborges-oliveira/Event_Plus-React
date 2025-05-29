@@ -1,20 +1,16 @@
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
 import Comentario from "../../assets/img/comentario.png";
-import SelectOn from "../../assets/img/select on.png";
-import SelectOFF from "../../assets/img/Select.png";
 import "./EventLista.css";
 import Toggle from "../../components/toggle/Toggle";
+import Descricao from "../../assets/img/informacoes 1.png";
 
 const EventLista = () => {
     return (
         <>
             <Header />
             <section className="container_Event">
-
-            
                 <h1 className="titulo_Event">EVENTOS</h1>
-                
                 <hr className="Linha_Evnet" />
 
                 <div className="filtro_Event">
@@ -32,55 +28,37 @@ const EventLista = () => {
                         <thead>
                             <tr className="cabecalho_Event">
                                 <th>Título</th>
-                                <th><b>Tipo Evento</b></th>
-                                <th><b>Comentários</b></th>
-                                <th><b>Participar</b></th>
+                                <th>Data do evento</th>
+                                <th>Tipo Evento</th>
+                                <th>Descrição</th>
+                                <th>Comentários</th>
+                                <th>Participar</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr className="linha_Evento separa">
-                                <td>Nome Evento</td>
-                                <td>Tipo Evento</td>
-                                <td><img src={Comentario} alt="comentário" className="icon_Event" /></td>
-                                <td><Toggle/></td>
-                            </tr>
-                            <tr className="linha_Evento espaço">
-                                <td>Nome Evento</td>
-                                <td>Tipo Evento</td>
-                                <td><img src={Comentario} alt="comentário" className="icon_Event" /></td>
-                                <td> <Toggle/></td>
-                            </tr>
-                            <tr className="linha_Evento espaço">
-                                <td>Nome Evento</td>
-                                <td>Tipo Evento</td>
-                                <td><img src={Comentario} alt="comentário" className="icon_Event" /></td>
-                                <td> <Toggle/></td>
-                            </tr>
-                            <tr className="linha_Evento espaço">
-                                <td>Nome Evento</td>
-                                <td>Tipo Evento</td>
-                                <td><img src={Comentario} alt="comentário" className="icon_Event" /></td>
-                                <td> <Toggle/></td>
-                            </tr>
-                            <tr className="linha_Evento espaço">
-                                <td>Nome Evento</td>
-                                <td>Tipo Evento</td>
-                                <td><img src={Comentario} alt="comentário" className="icon_Event" /></td>
-                                <td> <Toggle/></td>
-                            </tr>
-                            <tr className="linha_Evento espaço">
-                                <td>Nome Evento</td>
-                                <td>Tipo Evento</td>
-                                <td><img src={Comentario} alt="comentário" className="icon_Event" /></td>
-                                <td> <Toggle/></td>
-                            </tr>
+                            
+                                <tr  className="linha_Evento espaço">
+                                    <td>Evento de castração de cachorro ao vivo	</td>
+                                    <td>22/05/2026</td>
+                                    <td> Campeonato</td>
+                                    <td style={{ backgroundImage: `url(${Descricao})` }}>
+                                          
+                                    </td>
+                                    <td>
+                                        <img src={Comentario} alt="comentário" className="icon_Event" />
+                                    </td>
+                                    <td>
+                                        <Toggle />
+                                    </td>
+                                </tr>
+                          
                         </tbody>
                     </table>
                 </div>
-                </section>
+            </section>
             <Footer />
         </>
     );
 };
-    
+
 export default EventLista;

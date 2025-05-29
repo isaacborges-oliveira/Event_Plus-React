@@ -9,7 +9,7 @@ const Lista = (props) => {
     return (
         <>
             <section className="listagem">
-                <h1>{`Lista de ${props.tituloLista}`}</h1>
+                <h1>{`Lista  ${props.tituloLista}`}</h1>
                 <hr className="linha_titulo" />
 
 
@@ -32,14 +32,15 @@ const Lista = (props) => {
                             {props.lista && props.lista.length > 0 ? (
                                 props.lista.map((item) => (
 
-                                    <tr className="item_lista" key={props.tipoLista == "tipoEvento" ? item.idTipoEvento : props.tipoLista == "tipoUsuario" ?  item.idTipoUsuario : props.tipoLista == "cadastroEvento" ? item.idEvento: "vazio"}>
-                                        <td className="left" data-cell={props.titulo}>
-                                            {props.tipoLista == "tipoEvento" ? item.tituloTipoEvento : props.tipoLista == "tipoUsuario" ? item.tituloTipoUsuario :props.tipoLista == "cadastroEvento"? item.nomeEvento : "vazio"}
+                                    <tr className="item_lista" key={props.tipoLista == "tipoEvento" ? item.idTipoEvento : props.tipoLista == "tipoUsuario" ?  item.idTipoUsuario : props.tipoLista == "cadastroEvento" ? item.idEvento: item.idEvento}>
+                                        <td className="left" data-cell="Nome">
+
+                                            {props.tipoLista == "tipoEvento" ? item.tituloTipoEvento : props.tipoLista == "tipoUsuario" ? item.tituloTipoUsuario :props.tipoLista == "cadastroEvento"? item.nomeEvento : item.nomeEvento}
                                         </td>
                                         <td className="left" data-cell="Data do Evento"  style={{ display: props.visibilidade }}>
                                             {item.dataEvento}
                                         </td>
-                                        <td className="left" data-cell="Tipo Evento" style={{ display: props.visibilidade }} >{item.idTipoEvento}</td>
+                                        <td className="left" data-cell="Tipo Evento" style={{ display: props.visibilidade }} >{item.tiposEvento?.tituloTipoEvento}</td>
                                         <td className="right" data-cell="Editar">
                                             <img
                                                 src={Editar}
@@ -54,10 +55,12 @@ const Lista = (props) => {
                                                 onClick={() => (props.excluir(item))}
                                             />
                                         </td>
+                                        
                                         <td className="right" data-cell="Descrição"  style={{ display: props.visibilidade }}>
                                             <img src={Decricao}
-                                             alt="" 
-                                              onClick={() => (props.descricao(item))}
+                                             alt="Descrição" 
+                                             onClick={() => props.descricao(item.descricao)}
+
                                              />
                                         </td>
 

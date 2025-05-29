@@ -12,7 +12,7 @@ import Banner from "../../assets/img/mulher.png"
 const CadastrarTipoDeUsuario = () => {
     const [tipousuario, setTipoUsuario] = useState("");
     const [listaTipoUsuario, setListaTipoUsuario] = useState([])
-    
+
 
     function alertar(icone, mensagem) {
         const Toast = Swal.mixin({
@@ -113,25 +113,24 @@ const CadastrarTipoDeUsuario = () => {
                 visibilidade="none"
                 imagem={Banner}
                 place="Titulo"
-                 nomeDoBotao="Cadastrar"
+                nomeDoBotao="Cadastrar"
                 funcCadastro={cadastrarTipoUsuario}
 
                 valorInput={tipousuario}
                 setValorInput={setTipoUsuario}
-                
+
             />
             <Lista
+                lista={listaTipoUsuario}
                 titulo="Lista Tipo de Usuario"
                 tdnome="Tipo de Usuario"
                 tituloEvento="Titulo"
-                  visibilidade="none"
-                tipoLista="tiposUsuarios"
-
-                lista={listaTipoUsuario}
-
-                deletar={removerTipoUsuario}
-                funcEditar={editarTipoUsuario}
+                visibilidade="none"
+                tipoLista="tipoUsuario" // <- use o nome certo aqui
+                excluir={removerTipoUsuario}
+                editar={editarTipoUsuario}
             />
+
             <Footer />
         </>
     )

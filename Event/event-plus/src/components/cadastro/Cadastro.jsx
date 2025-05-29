@@ -30,6 +30,7 @@ const Cadastro = (props) => {
                         <div className="campo_cad_titulo">
                             <input type="date"
                                 value={props.valorDate}
+                                style={{ display: props.visibilidade }}
                                 onChange={(e) => props.setValorDate(e.target.value)}
                             />
                         </div>
@@ -53,12 +54,14 @@ const Cadastro = (props) => {
                         <div className="campo_cad_titulo">
                             <select name="" id=""
                                 value={props.valorSelect2}
+                                style={{ display: props.visibilidade }}
                                 onChange={(e) => props.setValorSelect2(e.target.value)}
                             >
                                 <option selected value="">Senai</option>
                             </select>
                             <textarea name="" id="" placeholder="Descrição" className="descricao"
                                 value={props.valorText}
+                                style={{ display: props.visibilidade }}
                                 onChange={(e) => props.setValorText(e.target.value)}
                             ></textarea>
                         </div>

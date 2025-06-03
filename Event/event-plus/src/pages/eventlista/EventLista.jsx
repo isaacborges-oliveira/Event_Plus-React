@@ -83,7 +83,7 @@ const EventLista = () => {
                         </thead>
                         <tbody>
                             {eventos.map((evento, index) => (
-                                <tr key={index} className="linha_Evento espaço">
+                             <tr key={index} className="linha_Evento espaço">
                                     <td>{evento.nomeEvento}</td>
                                     <td>{new Date(evento.dataEvento).toLocaleDateString()}</td>
                                     <td>{evento.tiposEvento?.tituloTipoEvento}</td>
@@ -91,7 +91,7 @@ const EventLista = () => {
                                         <img
                                             src={Descricao}
                                             alt="Descrição"
-                                            className="icon_Event"
+                                            className="icon_Event"  
                                             style={{ cursor: "pointer" }}
                                             onClick={() =>
                                                 Swal.fire({

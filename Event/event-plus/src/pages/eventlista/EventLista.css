@@ -1,5 +1,5 @@
 .container_Event {
-    min-height: calc(100vh - (75px + 252px + 40px));
+  
     max-width: 900px;
     margin: 0 auto;
     padding: 40px;

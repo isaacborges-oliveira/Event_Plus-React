@@ -97,3 +97,70 @@
     padding-inline-start: 50px;
     
 }
+/* RESPONSIVO */
+@media screen and (max-width: 768px) {
+  .section_cadastro {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .banner_cadastro {
+    display: none;
+  }
+
+  .form_cadastro {
+    width: 100%;
+  }
+
+  .main_cadastro {
+    padding: 1rem;
+  }
+
+  input,
+  select,
+  textarea {
+  
+   
+    font-size: 0.85rem;
+    padding: 0.4rem;
+    width: 90%;
+    max-width: 300px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 4px;
+  }
+
+  textarea {
+    min-height: 80px;
+    max-height: 100px;
+    resize: vertical;
+  }
+
+  .campo_cad_titulo {
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .descricao {
+    width: 90%;
+    max-width: 300px;
+    font-size: 0.85rem;
+    margin: 0 auto;
+    display: block;
+  }
+
+  /* Centralizar o botão */
+  .botao {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .botao button {
+    width: 150px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 5px;
+  }
+}

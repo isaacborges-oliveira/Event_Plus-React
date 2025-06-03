@@ -1,0 +1,76 @@
+/* Estilo base já existente acima */
+
+/* Responsividade para tablets e celulares */
+@media screen and (max-width: 1024px) {
+  .listagem, .cadastro, .tabela {
+    padding: 1rem;
+    overflow-x: auto;
+  }
+
+  .listagem h1,
+  .cadastro h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .linha_titulo {
+    margin: 1rem auto;
+    width: 80%;
+  }
+
+  table {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  th, td {
+    padding: 0.5rem;
+  }
+
+  .tabela th,
+  .tabela td {
+    white-space: nowrap;
+  }
+
+  .icon_Event {
+    width: 24px;
+    height: 24px;
+  }
+
+  .swal2-popup {
+    width: 90% !important;
+  }
+}
+
+/* Responsividade para celulares pequenos */
+@media screen and (max-width: 600px) {
+  .filtro_Event select {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  .tabela_Event table,
+  .listagem table {
+    font-size: 0.8rem;
+  }
+
+  th, td {
+    font-size: 0.75rem;
+    padding: 0.4rem;
+  }
+
+  .tabela_Event img,
+  .listagem img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .container_Event {
+    padding: 0.5rem;
+  }
+
+  .titulo_Event {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+}

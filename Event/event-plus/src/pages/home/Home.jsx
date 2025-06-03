@@ -1,73 +1,91 @@
+import "./Home.css"
 import Header from "../../components/header/Header";
-import Footer from "../../components/footer/Footer";
-import "./Home.css";
-import imagemBanner from "../../assets/img/Fundoo.png"
-import Mapa from "../../assets/img/Mapa.png";
+import Footer from "../../components/footer/Footer"
+
+import Banner from "../../assets/img/banner.png"
+import Mapa from "../../assets/img/Mapa.png"
+import Visao from "../../assets/img/visao.png"
 
 
 const Home = () => {
     return (
         <>
-            <Header />
-
+            <Header
+                visibilidade="none" />
             <main>
-
-                <section className="hero" style={{ backgroundImage: `url(${imagemBanner})` }}>
-                   
-
-            
-                            
-                    <div className="hero-content" >
-                       
-                        <div className="linha-com-icone">
-                            
-                        </div>
-                   
+                <section className="home_section">
+                    <div className="pagina_home">
+                        <img src={Banner} alt="" />
                     </div>
 
-                </section>
+                    <div className="proximos_eventos">
+                        <div className="titulo">
+                            <h1>Próximos Eventos</h1>
+                            <hr />
+                        </div>
 
+                        <div className="lista_eventos layout_grid">
+                            <div className="item">
+                                <h1>Titulo do Evento</h1>
 
-                <section className="eventos">
-                    <h2>PRÓXIMOS EVENTOS</h2>
-                    <div className="eventos-cards">
-                        {[1, 2, 3, 4].map((_, index) => (
-                            <div key={index} className="card">
-                                <h3>Título do Evento</h3>
-                                <p>Breve descrição do evento, pode ser um parágrafo pequeno</p>
+                                <p>Breve descrição do evento, pode ser um paragrafo pequeno</p>
+
                                 <button>Conectar</button>
                             </div>
-                        ))}
+
+                            <div className="item">
+                                <h1>Titulo do Evento</h1>
+
+                                <p>Breve descrição do evento, pode ser um paragrafo pequeno</p>
+
+                                <button>Conectar</button>
+                            </div>
+
+                            <div className="item">
+                                <h1>Titulo do Evento</h1>
+
+                                <p>Breve descrição do evento, pode ser um paragrafo pequeno</p>
+
+                                <button>Conectar</button>
+                            </div>
+
+                            <div className="item">
+                                <h1>Titulo do Evento</h1>
+
+                                <p>Breve descrição do evento, pode ser um paragrafo pequeno</p>
+
+                                <button>Conectar</button>
+                            </div>
+                        </div>
                     </div>
-                </section>
 
-                {/* Visão */}
-                <section className="visao">
-                    <h2>VISÃO</h2>
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
-                        since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                        It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                        and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                    </p>
-                </section>
+                    <div className="visao">
+                        <img src={Visao} alt="" />
+                    </div>
 
-                {/* Contato */}
-                <section className="contato" >
-                    <div className="mapa" style={{ backgroundImage: `url(${Mapa})` }}></div>
-                    <div className="info">
-                        <p>Rua Natal, 103 – Centro</p>
-                        <p>São Caetano do Sul – SP</p>
-                        <p>(11) 4325-2030</p>
+                    <div className="contato">
+                        <div className="titulo_2">
+                            <h1>Contato</h1>
+                            <hr />
+                        </div>
 
+                        <div className="mapa_informacoes layout_grid">
+                            <div className="mapa">
+                                <img src={Mapa} alt="" />
+                            </div>
+
+                            <div className="informacoes_contato">
+                                <p>Rua Niterói, 180 - Centro</p>
+                                <p>São Caetano  do  Sul - SP</p>
+                                <p>(11) 4225-2000</p>
+                            </div>
+                        </div>
                     </div>
                 </section>
             </main>
-
             <Footer />
         </>
-    );
-};
+    )
+}
 
 export default Home;

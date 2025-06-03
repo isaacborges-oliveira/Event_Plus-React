@@ -3,9 +3,26 @@ import Header from "../../components/header/Header";
 import Comentario from "../../assets/img/comentario.png";
 import "./EventLista.css";
 import Toggle from "../../components/toggle/Toggle";
-import Descricao from "../../assets/img/informacoes 1.png";
+import Descricao from "../../assets/img/Descricaoo.png";
+import api from "../../Services/services";
+import { useEffect, useState } from "react";
 
 const EventLista = () => {
+    const [eventos, setEventos] = useState([]);
+
+    useEffect(() => {
+        listarEventos();
+    }, []);
+
+    const listarEventos = async () => {
+        try {
+            const resposta = await api.get("/Eventos");
+            setEventos(resposta.data);
+        } catch (error) {
+            console.error("Erro ao buscar eventos:", error);
+        }
+    };
+
     return (
         <>
             <Header />
@@ -36,22 +53,34 @@ const EventLista = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            
-                                <tr  className="linha_Evento espaço">
-                                    <td>Evento de castração de cachorro ao vivo	</td>
-                                    <td>22/05/2026</td>
-                                    <td> Campeonato</td>
-                                    <td style={{ backgroundImage: `url(${Descricao})` }}>
-                                          
+                            {eventos.map((evento, index) => (
+                                <tr key={index} className="linha_Evento espaço">
+                                    <td>{evento.nomeEvento}</td>
+                                    <td>{new Date(evento.dataEvento).toLocaleDateString()}</td>
+                                    <td>{evento.tituloTipoEvento }</td>
+                                    <td>
+                                        <img
+                                            src={Descricao}
+                                            alt="Descrição"
+                                            className="icon_Event"
+                                            style={{ cursor: "pointer" }}
+                                            onClick={() => alert(evento.descricao)}
+                                        />
                                     </td>
                                     <td>
-                                        <img src={Comentario} alt="comentário" className="icon_Event" />
+                                        <img
+                                            src={Comentario}
+                                            alt="comentário"
+                                            className="icon_Event"
+                                            style={{ cursor: "pointer" }}
+                                            onClick={() => alert("Abrir comentários")}
+                                        />
                                     </td>
                                     <td>
-                                        <Toggle />
+                                        <Toggle idEvento={evento.idEvento} />
                                     </td>
                                 </tr>
-                          
+                            ))}
                         </tbody>
                     </table>
                 </div>

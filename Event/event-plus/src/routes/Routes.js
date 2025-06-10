@@ -17,10 +17,10 @@ const Rotas = () => {
                 <Route path="/tipoevento" element={<TipoEvento />} exact />
                 <Route path="/usuario" element={<Usuario />} exact />
                 <Route path="/cadastroEvento" element={<CadastroEvento />} exact />
-                <Route path="/eventlista" element={< EventLista />} exact />
+                <Route path="/ListagemEventos" element={< EventLista />} exact />
                 <Route path="/tipoevento" element={< TipoEvento />} exact />
                 <Route path="/home" element={< TelaHome/>} exact />
-                <Route path="/eventos" element={< Eventos/>} exact />
+                <Route path="/CadastroEventos" element={< Eventos/>} exact />
 
 
             </Routes>

@@ -6,13 +6,20 @@ import api from "../../Services/services";
 import Swal from 'sweetalert2'
 import { userDecodeToken } from "../../auth/Auth";
 import { useState } from "react";
+import secureLocalStorage from "react-secure-storage";
+//navegate serve para a pessoa ser direcionado para uma outra tela
+import { useNavigate } from "react-router-dom";
+
 //componente funcional
+
 const Login = () => {
 
 
 
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
+
+    const navigate = useNavigate();
 
     function alertar(icone, mensagem) {
         const Toast = Swal.mixin({
@@ -45,17 +52,27 @@ const Login = () => {
                 const resposta = await api.post("Login", usuario);
                 const token = resposta.data.token
 
+
                 if (token) {
-                 const tokenDecodificado =   userDecodeToken(token);
+                    const tokenDecodificado = userDecodeToken(token);
 
                     // console.log("token decodificadp");
                     // console.log(tokenDecodificado.tipoUsuario)
+                    secureLocalStorage.setItem("tokenLogin", JSON.stringify(tokenDecodificado));
+
                     
+                    if (tokenDecodificado.tipoUsuario === "aluno") {
+                        //redirecionar para a tela de aluno  (lista branca de eventos)
+                        navigate("/ListagemEventos")
+                    } else {
+                             //ele vai me encaminhar para a tela cadasttro de eventos
+                        navigate("/CadastroEventos")
+                    }
 
                 }
 
             } catch (error) {
-                console.log(error);
+                alertar("error","Email ou senha invalidos")
             }
         } else {
             alertar("error", "Viado gay, escreva algo ai")

@@ -93,7 +93,9 @@
     display: block;
 }
 
-
+button{
+    background-color: white;
+}
 .botao button {
     background-color: #c2185b;
     color: #fff;

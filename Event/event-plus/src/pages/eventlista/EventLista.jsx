@@ -16,48 +16,31 @@ const ListaEvento = () => {
     const [tipoModal, setTipoModal] = useState("") //"descricaoEvento" ou "Comentario"
     const [dadosModal, setDadosModal] = useState([]) //descricao, idEvento, etc.
     const [modalAberto, settModalAberto] = useState([false])
-    const [filtroData, setFiltroData] = useState(["todos"])
+    const [filtro, setFiltro] = useState(["todos"])
     const [usuarioId, setUsuarioId] = useState("67299B4B-D582-4127-A3B9-EB8902386071")
 
     async function listarEventos() {
         try {
-            const resposta = await api.get("/Eventos");
-
+            //pego o eventos em geral
+            const resposta = await api.get("eventos");
             const todosOsEventos = resposta.data;
-
-            const respostaPresenca = await api.get("PresencaEventos/ListarMinhas" + usuarioId)
-            const minhasPresencas = respostaPresenca.data;
+            const respostaPresencas = await api.get("PresencasEventos/ListarMinhas/" + usuarioId)
+            const minhasPresencas = respostaPresencas.data;
 
             const eventosComPresencas = todosOsEventos.map((atualEvento) => {
-                const presenca = minhasPresencas.find(p => p.idEvento === atualEvento.idEvento)
-
+                const presenca = minhasPresencas.find(p => p.idEvento === atualEvento.idEvento);
                 return {
-                    //As informacoes tanto de eventos quanto de eventos que possuem presenca
                     ...atualEvento,
 
                     possuiPresenca: presenca?.situacao === true,
-                    idPresenca: presenca?.idPresencaEvento || null
                 }
-
             })
 
-            setListaEventos(eventosComPresencas);
-            console.log(resposta.data);
-
-            console.log("Informacoes de todos os eventos");
-            console.log(todosOsEventos);
-
-            console.log("Informacoes de eventos com presenca");
-            console.log(todosOsEventos);
-
-            console.log("Informacoes de todos os eventos com presenca");
-            console.log(todosOsEventos);
-
+            setListaEventos(eventosComPresencas)
 
 
         } catch (error) {
-            console.log(error);
-
+            console.error("Erro ao buscar eventos:", error);
         }
     }
 
@@ -100,22 +83,16 @@ const ListaEvento = () => {
 
     function filtrarEventos() {
         const hoje = new Date();
-
         return listaEventos.filter(evento => {
             const dataEvento = new Date(evento.dataEvento);
 
-            if (filtroData.imncludes("todos")) return true;
-            if (filtroData.includes("futuros") && dataEvento > hoje)
-                return true;
-            if (filtroData.includes("futuros") && dataEvento < hoje)
-                return true;
+            if (filtro.includes("todos")) return true;
+            if (filtro.includes("futuros") && dataEvento > hoje) return true;
+            if (filtro.includes("passados") && dataEvento < hoje) return true;
             return false;
-
         })
-
     }
-
-   
+  
 
     return (
         <>
@@ -128,7 +105,7 @@ const ListaEvento = () => {
 
                     <div className="left  seletor">
                         <label htmlFor="eventos"></label>
-                        <select onChange={(e) => setFiltroData([e.target.value])} name="eventos" id="">
+                        <select onChange={(e) => setFiltro([e.target.value])} name="eventos" id="">
                             <option value="todos" selected>Todos os eventos</option>
                             <option value="">Somente Futuro</option>
                             <option value="">Somente Passados</option>
@@ -159,6 +136,7 @@ const ListaEvento = () => {
 
                                         <td className="descricao" onClick={() => abrirModal("descricaoEvento", { descricao: item.descricao })}>
                                             <button>
+                                              
                                                 <img src={Descricao} alt="" />
                                             </button>
                                         </td>

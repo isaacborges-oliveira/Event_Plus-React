@@ -2,7 +2,7 @@ import "./Header.css";
 import Logo1 from "../../assets/img/logo1 (1).svg"
 import Admin from "../../assets/img/Vector.png"
 import { Link } from "react-router-dom";
-const Header = () => {
+const Header = (props) => {
   return (
     <header>
       <div className="layout_grid cabecalho">
@@ -21,7 +21,7 @@ const Header = () => {
 
         <nav className="nav_header admin">
 
-          <Link to="/Administrador" className="_adm" href="">Administrador</Link>
+          <Link to="/Administrador" className="_adm" href="">{props.nomeheader}</Link>
           <img src={Admin} alt="" className="Adiminimage" />
         </nav>
 

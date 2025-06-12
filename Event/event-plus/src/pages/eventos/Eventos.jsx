@@ -14,7 +14,7 @@ const CadastrarEvento = () => {
     const [evento, setEvento] = useState("");
     const [dataevento, setDataEvento] = useState("");
     const [descricao, setDescricao] = useState("");
-    const [instituicao, setInstituicao] = useState("7A001D88-90E7-4A6B-831D-58189DE8AD8F");
+    const [instituicao, setInstituicao] = useState("E9472D55-08A1-4585-BEBA-B0A1EA1C62CA");
     const [tipoevento, setTipoEvento] = useState("");
     const [listaTipoEvento, setListaTipoEvento] = useState([])
     const [listaEvento, setListaEvento] = useState([])
@@ -186,7 +186,10 @@ const CadastrarEvento = () => {
 
     return (
         <>
-            <Header nomeUsu="Administrador" />
+            <Header nomeUsu="Administrador" 
+         nomeheader ="Adm"
+         
+         />
             <Cadastro
                 titulo="Cadastrar Evento"
                 imagem={Img1}

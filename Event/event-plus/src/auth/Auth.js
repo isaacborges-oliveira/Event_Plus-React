@@ -5,9 +5,9 @@ export const userDecodeToken = (token) => {
 const decodificado = jwtDecode(token);
 
 return{
-    idUsuario:decodificado.jti,
+    idUsuario: decodificado.jti,
     token: token,
-    tipoUsuario: decodificado["tipo do Usuario"]
+    tipoUsuario: decodificado["Tipo do usuário"]
     
 }
 }

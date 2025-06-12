@@ -1,5 +1,5 @@
 import Logo2 from "../../assets/img/undraw_login_re_4vu2 1.png"
-import Logo1 from "../../assets/img/logo1 (1).svg"
+import Logo1 from "../../assets/img/LogoNovaa.png"
 import Botao from "../../components/botao/Botao";
 import "./Login.css"
 import api from "../../Services/services";
@@ -9,6 +9,7 @@ import { useState } from "react";
 import secureLocalStorage from "react-secure-storage";
 //navegate serve para a pessoa ser direcionado para uma outra tela
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../contexts/AuthContext";
 
 //componente funcional
 
@@ -19,7 +20,9 @@ const Login = () => {
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
 
+
     const navigate = useNavigate();
+    const { setUsuario } = useAuth();
 
     function alertar(icone, mensagem) {
         const Toast = Swal.mixin({
@@ -56,23 +59,27 @@ const Login = () => {
                 if (token) {
                     const tokenDecodificado = userDecodeToken(token);
 
+
+                    setUsuario(tokenDecodificado)
                     // console.log("token decodificadp");
                     // console.log(tokenDecodificado.tipoUsuario)
                     secureLocalStorage.setItem("tokenLogin", JSON.stringify(tokenDecodificado));
 
-                    
-                    if (tokenDecodificado.tipoUsuario === "aluno") {
+                    // console.log("AAaaaaaaaa::::")
+                    // console.log(tokenDecodificado.tipoUsuario)
+
+                    if (tokenDecodificado.tipoUsuario === "Aluno") {
                         //redirecionar para a tela de aluno  (lista branca de eventos)
-                        navigate("/ListagemEventos")
+                        navigate("/ListagemEventos ")
                     } else {
-                             //ele vai me encaminhar para a tela cadasttro de eventos
+                        //ele vai me encaminhar para a tela cadasttro de eventos
                         navigate("/CadastroEventos")
                     }
 
                 }
 
             } catch (error) {
-                alertar("error","Email ou senha invalidos")
+                alertar("error", "Email ou senha invalidos")
             }
         } else {
             alertar("error", "Viado gay, escreva algo ai")

@@ -2,9 +2,9 @@ import "./Home.css"
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer"
 
-import Banner from "../../assets/img/banner.png"
+import Banner from "../../assets/img/EventBAnner.png"
 import Mapa from "../../assets/img/Mapa.png"
-import Visao from "../../assets/img/visao.png"
+import Visao from "../../assets/img/VisaoBAnner.png"
 
 
 const Home = () => {

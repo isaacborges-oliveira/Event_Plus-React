@@ -4,12 +4,14 @@ import Comentario from "../../assets/img/comentario.png"
 import Descricao from "../../assets/img/Descricaoo.png"
 import Toggle from "../../components/toggle/Toggle";
 import Modal from "../../components/modal/Modal"
+import Link from "../../components/lista/Lista";
 import "./EventLista.css";
 import { useState, useEffect } from "react";
 import api from "../../Services/services";
 import { format } from "date-fns";
 import { clampWithOptions } from "date-fns/fp";
 import Swal from "sweetalert2";
+import { useAuth } from "../../contexts/AuthContext";
 const ListaEvento = () => {
 
     const [listaEventos, setListaEventos] = useState([])
@@ -17,14 +19,15 @@ const ListaEvento = () => {
     const [dadosModal, setDadosModal] = useState([]) //descricao, idEvento, etc.
     const [modalAberto, settModalAberto] = useState([false])
     const [filtro, setFiltro] = useState(["todos"])
-    const [usuarioId, setUsuarioId] = useState("67299B4B-D582-4127-A3B9-EB8902386071")
+    const {usuario} = useAuth();
+    // const [usuarioId, setUsuarioId] = useState("67299B4B-D582-4127-A3B9-EB8902386071")
 
     async function listarEventos() {
         try {
             //pego o eventos em geral
             const resposta = await api.get("eventos");
             const todosOsEventos = resposta.data;
-            const respostaPresencas = await api.get("PresencasEventos/ListarMinhas/" + usuarioId)
+            const respostaPresencas = await api.get("PresencasEventos/ListarMinhas/" + usuario.idUsuario)
             const minhasPresencas = respostaPresencas.data;
 
             const eventosComPresencas = todosOsEventos.map((atualEvento) => {
@@ -46,6 +49,7 @@ const ListaEvento = () => {
 
     useEffect(() => {
         listarEventos();
+        console.log(usuario)
     }, [])
 
     function abrirModal(tipo, dados) {
@@ -71,7 +75,7 @@ const ListaEvento = () => {
                     { situacao: true });
             } else {
                 //Cadastrar nova presenca
-                await api.post("PresencaEventos", { situacao: true, idUsuario: usuarioId, idEvento: idEvento });
+                await api.post("PresencaEventos", { situacao: true, idUsuario: usuario.idUsuario, idEvento: idEvento });
                 Swal.fire('Confirmado!', 'Sua presenca foi confirmada.', 'success')
             }
             listarEventos()
@@ -178,7 +182,10 @@ const ListaEvento = () => {
                     descricao={dadosModal.descricao}
                     fecharModal={fecharModal}
                 />
+               
+               
             )}
+             <Link nomeheader ="aluno"/>
         </>
     );
 }
